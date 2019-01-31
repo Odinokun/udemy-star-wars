@@ -1,10 +1,8 @@
-### `npm start`
-### `npm run build`
+#### `npm start`
+#### `npm run build`
 
 ##
-#####we used 
-https://swapi.co/
+####We used 
 
-&&
-
-https://bootswatch.com/darkly/
+- https://swapi.co/
+- https://bootswatch.com/darkly/
