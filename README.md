@@ -6,3 +6,4 @@
 
 - https://swapi.co/
 - https://bootswatch.com/darkly/
+- https://starwars-visualguide.com/
