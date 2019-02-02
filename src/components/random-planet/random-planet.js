@@ -32,10 +32,9 @@ export default class RandomPlanet extends Component {
       error: true,
       loading: false
     });
-  }
-;
+  };
   updatePlanet() {
-    const id = Math.floor(Math.random()*1500) + 2;
+    const id = Math.floor(Math.random()*15) + 2;
     this.swapiService
       .getPlanet(id)
       .then(this.onPlanetLoaded)
