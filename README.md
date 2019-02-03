@@ -8,9 +8,7 @@
 
 http://star-wars.odinokun.com/
 
-
-
-####We used 
+###We used 
 
 - https://swapi.co/
 - https://bootswatch.com/darkly/
