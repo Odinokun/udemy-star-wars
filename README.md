@@ -6,5 +6,5 @@ http://star-wars.odinokun.com/
 - https://bootswatch.com/darkly/
 - https://starwars-visualguide.com/
 
-#### start project `npm start`
-#### build project `npm run build`
+#### start project - `npm start`
+#### build project - `npm run build`
