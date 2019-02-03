@@ -51,8 +51,6 @@ export default class RandomPlanet extends Component {
     const spinner = loading ? <Spinner /> : null;
     const content = hasData ? <PlanetView planet={planet} /> : null;
 
-
-
     return (
       <div className="random-planet jumbotron rounded">
         {errorMessage}
@@ -70,7 +68,7 @@ const PlanetView = ({planet}) => {
   return (
     <React.Fragment>
       <img className="planet-image"
-           src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} alt="star wars"/>
+           src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} alt="Star wars planet"/>
       <div>
         <h4>{name}</h4>
         <ul className="list-group list-group-flush">
