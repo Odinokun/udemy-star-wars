@@ -1,6 +1,15 @@
 #### `npm start`
 #### `npm run build`
 
+
+
+
+## You can see the project here
+
+http://star-wars.odinokun.com/
+
+
+
 ##
 ####We used 
 

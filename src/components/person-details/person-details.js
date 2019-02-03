@@ -23,6 +23,7 @@ export default class PersonDetails extends Component {
       loading: false,
       error: false
     });
+    console.log(person);
   };
 
   componentDidUpdate(prevProps) {
@@ -68,6 +69,7 @@ export default class PersonDetails extends Component {
     const errorMessage = error ? <ErrorIndicator/> : null;
     const spinner = loading ? <Spinner /> : null;
     const content = hasData ? <PersonView person={person} /> : null;
+
 
     return (
       <div className="person-details card">
