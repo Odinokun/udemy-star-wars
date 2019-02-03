@@ -13,16 +13,16 @@ export default class PersonDetails extends Component {
     loading: true
   };
 
-  componentDidMount() {
-    this.updatePerson();
-  };
-
   onPersonLoaded = (person) => {
     this.setState({
       person,
       loading: false,
       error: false
     });
+  };
+
+  componentDidMount() {
+    this.updatePerson();
   };
 
   componentDidUpdate(prevProps) {
