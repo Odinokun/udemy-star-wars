@@ -23,7 +23,6 @@ export default class PersonDetails extends Component {
       loading: false,
       error: false
     });
-    console.log(person);
   };
 
   componentDidUpdate(prevProps) {
