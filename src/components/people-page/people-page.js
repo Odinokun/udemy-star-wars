@@ -3,8 +3,8 @@ import './people-page.css';
 import ItemList from '../item-list';
 import PersonDetails from '../person-details';
 import ErrorIndicator from '../error-indicator';
-import ErrorButton from '../error-button';
 import SwapiService from "../../services/swapi-service";
+import Row from '../row';
 
 export default class PeoplePage extends Component {
 
@@ -43,15 +43,7 @@ export default class PeoplePage extends Component {
     );
 
     return (
-      <div className="row mb2">
-        <div className="col-md-6">
-          {itemList}
-        </div>
-        <div className="col-md-6">
-          {personDetails}
-          <ErrorButton/>
-        </div>
-      </div>
+      <Row left={itemList} right={personDetails}/>
     );
   }
 }
