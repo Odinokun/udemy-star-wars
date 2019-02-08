@@ -16,14 +16,6 @@ export default class ItemDetails extends Component {
     loading: true
   };
 
-  // onPersonLoaded = (item) => {
-  //   this.setState({
-  //     item: item,
-  //     loading: false,
-  //     error: false
-  //   });
-  // };
-
   componentDidMount() {
     this.updateItem();
   };
@@ -43,7 +35,7 @@ export default class ItemDetails extends Component {
 
   updateItem = () => {
     const {itemId, getData, getImageUrl} = this.props;
-
+    
     if (!itemId) {
       return;
     }
@@ -51,21 +43,20 @@ export default class ItemDetails extends Component {
     this.setState({
       loading: true
     });
-
+    
     getData(itemId)
-    // this.swapiService.getPerson(itemId)
       .then((item) => {
         this.setState({
+          loading: false,
           item,
           image: getImageUrl(item)
         });
       })
-      // .then(this.onPersonLoaded)
       .catch(this.onError);
   };
 
   render() {
-    const {item, loading, error} = this.state;
+    const {item, loading, error, image} = this.state;
 
     if (!this.state.item) {
       return <Spinner/>;
@@ -75,8 +66,7 @@ export default class ItemDetails extends Component {
 
     const errorMessage = error ? <ErrorIndicator/> : null;
     const spinner = loading ? <Spinner/> : null;
-    const content = hasData ? <ItemView item={item}/> : null;
-
+    const content = hasData ? <ItemView item={item} image={image}/> : null;
 
     return (
       <div className="item-details card">
@@ -88,9 +78,9 @@ export default class ItemDetails extends Component {
   }
 }
 
-const ItemView = ({item}) => {
+const ItemView = ({item, image}) => {
 
-  const {id, name, gender, birthYear, eyeColor, image} = item;
+  const {id, name, gender, birthYear, eyeColor} = item;
 
   return (
     <React.Fragment>
