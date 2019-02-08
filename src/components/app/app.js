@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import './app.css';
 import Header from '../header';
-import RandomPlanet from '../random-planet';
-import PeoplePage from "../people-page/people-page";
-import ItemList from '../item-list';
+// import RandomPlanet from '../random-planet';
+// import PeoplePage from "../people-page/people-page";
+// import ItemList from '../item-list';
 import SwapiService from "../../services/swapi-service";
 import Row from "../row/row";
-import ItemDetails from '../item-details';
+import ItemDetails, {Record} from '../item-details';
 
 export default class App extends Component {
 
@@ -25,7 +25,12 @@ export default class App extends Component {
       <ItemDetails
         itemId={11}
         getData={getPerson}
-        getImageUrl={getPersonImage}/>
+        getImageUrl={getPersonImage}>
+
+        <Record field="gender" label="Gender"/>
+        <Record field="eyeColor" label="Eye Color"/>
+
+      </ItemDetails>
     );
 
     const starshipDetails = (

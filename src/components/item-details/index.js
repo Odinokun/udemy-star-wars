@@ -1,3 +1,5 @@
-import PersonDetails from './item-details';
+import itemDetails, {Record} from './item-details';
 
-export default PersonDetails;
+export default itemDetails;
+
+export {Record};
