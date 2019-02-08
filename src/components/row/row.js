@@ -1,6 +1,5 @@
 import React from 'react';
 import './row.css';
-import ErrorButton from '../error-button';
 
 const Row = ({left, right}) => {
   return (
@@ -10,7 +9,6 @@ const Row = ({left, right}) => {
       </div>
       <div className="col-md-6">
         {right}
-        <ErrorButton/>
       </div>
     </div>
   );
