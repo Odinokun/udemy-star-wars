@@ -91,7 +91,7 @@ export default class ItemDetails extends Component {
 }
 
 const ItemView = ({item, image}) => {
-
+  
   const {name, gender, birthYear, eyeColor} = item;
   
   return (
