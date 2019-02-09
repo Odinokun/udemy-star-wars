@@ -96,8 +96,6 @@ const ItemView = ({item, image, children}) => {
   
   const {name, gender, birthYear, eyeColor} = item;
   
-  console.log('children =', children);
-
   return (
     <React.Fragment>
       <img className="item-image" src={image} alt="star wars"/>
@@ -108,7 +106,6 @@ const ItemView = ({item, image, children}) => {
         <ul className="list-group list-group-flush">
           {
             React.Children.map(children, (child) => {
-              console.log('child =', child);
               return React.cloneElement(child, { item });
             })
           }

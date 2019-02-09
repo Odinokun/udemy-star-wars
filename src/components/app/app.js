@@ -27,17 +27,23 @@ export default class App extends Component {
         getData={getPerson}
         getImageUrl={getPersonImage}>
 
-        <Record field="gender" label="Gender"/>
-        <Record field="eyeColor" label="Eye Color"/>
+        <Record field="gender" label="Gender -"/>
+        <Record field="eyeColor" label="Eye Color -"/>
 
       </ItemDetails>
     );
 
     const starshipDetails = (
       <ItemDetails
-        itemId={11}
+        itemId={10}
         getData={getStarship}
-        getImageUrl={getStarshipImage}/>
+        getImageUrl={getStarshipImage}>
+
+        <Record field="model" label="Model -"/>
+        <Record field="length" label="Length -"/>
+        <Record field="costInCredits" label="Cost -"/>
+
+      </ItemDetails>
     );
 
     return (
