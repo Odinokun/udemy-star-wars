@@ -25,8 +25,10 @@ export default class ItemDetails extends Component {
   state = {
     item: null,
     image: null,
-    loading: true
+    loading: true,
+    children: this.props.children
   };
+
 
   componentDidMount() {
     this.updateItem();
@@ -68,7 +70,7 @@ export default class ItemDetails extends Component {
   };
 
   render() {
-    const {item, loading, error, image} = this.state;
+    const {item, loading, error, image, children} = this.state;
 
     if (!this.state.item) {
       return <Spinner/>;
@@ -78,7 +80,7 @@ export default class ItemDetails extends Component {
 
     const errorMessage = error ? <ErrorIndicator/> : null;
     const spinner = loading ? <Spinner/> : null;
-    const content = hasData ? <ItemView item={item} image={image}/> : null;
+    const content = hasData ? <ItemView item={item} image={image} children={children}/> : null;
 
     return (
       <div className="item-details card">
@@ -90,10 +92,12 @@ export default class ItemDetails extends Component {
   }
 }
 
-const ItemView = ({item, image}) => {
+const ItemView = ({item, image, children}) => {
   
   const {name, gender, birthYear, eyeColor} = item;
   
+  console.log('children =', children);
+
   return (
     <React.Fragment>
       <img className="item-image" src={image} alt="star wars"/>
@@ -103,7 +107,8 @@ const ItemView = ({item, image}) => {
 
         <ul className="list-group list-group-flush">
           {
-            React.Children.map(this.props.children, (child) => {
+            React.Children.map(children, (child) => {
+              console.log('child =', child);
               return React.cloneElement(child, { item });
             })
           }
