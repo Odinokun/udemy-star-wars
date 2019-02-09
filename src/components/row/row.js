@@ -1,17 +1,22 @@
 import React from 'react';
 import './row.css';
-import ErrorButton from '../error-button';
+
+import ErrorBoundry from '../error-boundry';
 
 const Row = ({left, right}) => {
   return (
     <div className="row mb2">
-      <div className="col-md-6">
-        {left}
-      </div>
-      <div className="col-md-6">
-        {right}
-        <ErrorButton/>
-      </div>
+      <ErrorBoundry>
+        <div className="col-md-6">
+          {left}
+        </div>
+      </ErrorBoundry>
+
+      <ErrorBoundry>
+        <div className="col-md-6">
+          {right}
+        </div>
+      </ErrorBoundry>
     </div>
   );
 };
