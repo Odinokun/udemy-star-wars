@@ -43,14 +43,20 @@ export default class App extends Component {
               <Route path="/"
                      render={() => <h2>Welcome to Odinokun`s Star DB</h2>}
                      exact={true}/>
+
+              {/*BEGIN Люди*/}
               <Route path="/people"
                      render={() => <h2>People</h2>}/>
               <Route path="/people" component={PeoplePage}/>
+              {/*END Люди*/}
 
+              {/*BEGIN Планеты*/}
               <Route path="/planets"
                      render={() => <h2>Planets</h2>}/>
               <Route path="/planets" component={PlanetsPage}/>
+              {/*END Планеты*/}
 
+              {/*BEGIN Космические корабли*/}
               <Route path="/starships"
                      render={() => <h2>Starships</h2>}/>
               <Route path="/starships" exact={true} component={StarshipsPage}/>
@@ -59,6 +65,7 @@ export default class App extends Component {
                        const {id} = match.params;
                        return <StarshipDetails itemId={id}/>
                      }}/>
+              {/*END Космические корабли*/}
 
             </div>
           </Router>
